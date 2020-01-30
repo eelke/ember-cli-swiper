@@ -34,7 +34,7 @@ As a hash of options:
 ```js
 // In controller
 Controller.extend({
-  myOptions: { parallax: true }
+  myOptions: Object.freeze({ parallax: true })
 });
 
 {{swiper-container options=myOptions}}

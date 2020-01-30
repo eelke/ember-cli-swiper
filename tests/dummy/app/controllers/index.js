@@ -7,6 +7,22 @@ export default Controller.extend({
   currentSlide: 0,
   currentSlide2: 2,
 
+  slideOptions: Object.freeze({
+    keyboard: false,
+    pagination: {
+      type: 'bullets',
+      dynamicBullets: true,
+      clickable: true
+    },
+    autoHeight: true,
+    loop: true,
+    autoplay: {
+      delay: 3000,
+      stopOnLastSlide: false,
+      disableOnInteraction: false
+    }
+  }),
+
   actions: {
     addToHistory(newElement) {
       this.set('selectionHistory', `${jQ(newElement).text()}${this.get('selectionHistory')}`);

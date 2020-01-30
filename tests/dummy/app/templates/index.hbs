@@ -297,3 +297,48 @@ Current Slideindex: {{currentSlide2}}
     \{{#container.slide}}Slide 2\{{/container.slide}}
   \{{/swiper-container}}
 </pre>
+
+
+<h3>Example with external options</h3>
+
+{{#swiper-container options=this.slideOptions}}
+  {{#swiper-slide class='myslide myslide-1'}}Slide 1{{/swiper-slide}}
+  {{#swiper-slide class='myslide myslide-2'}}Slide 2{{/swiper-slide}}
+  {{#swiper-slide class='myslide myslide-3'}}Slide 3{{/swiper-slide}}
+  {{#swiper-slide class='myslide myslide-4'}}Slide 4{{/swiper-slide}}
+  {{#swiper-slide class='myslide myslide-5'}}Slide 5{{/swiper-slide}}
+{{/swiper-container}}
+
+<pre>
+  \{{#swiper-container options=this.slideOptions}}
+    \{{#swiper-slide}}Slide 1\{{/swiper-slide}}
+    \{{#swiper-slide}}Slide 2\{{/swiper-slide}}
+    \{{#swiper-slide}}Slide 3\{{/swiper-slide}}
+    \{{#swiper-slide}}Slide 4\{{/swiper-slide}}
+    \{{#swiper-slide}}Slide 5\{{/swiper-slide}}
+  \{{/swiper-container}}
+</pre>
+
+<pre>
+
+import Controller from '@ember/controller';
+
+export default Controller.extend({
+
+    slideOptions: Object.freeze({
+      pagination: {
+        type: 'bullets',
+        dynamicBullets: true,
+        clickable: true
+      },
+      autoHeight: true,
+      loop: true,
+      autoplay: {
+        delay: 3000,
+        stopOnLastSlide: false,
+        disableOnInteraction: false
+      }
+    }),
+});
+
+</pre>
